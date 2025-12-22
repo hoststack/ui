@@ -25,7 +25,7 @@
     "fast-sort": "^3.4.1",
     "react-hot-toast": "^2.6.0",
     "react-wrap-balancer": "^1.1.1",
-    "stoop": "^0.2.1"
+    "stoop": "file:../../dolmios/stoop"
   },
   "devDependencies": {
     "@types/google.maps": "^3.58.1",

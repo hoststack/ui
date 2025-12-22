@@ -135,8 +135,8 @@ export const TextStyled = styled("div", {
     marginBottom: "0 !important",
   },
   color: "$text",
-  marginBlock: 'auto',
-  paddingBlock: 'auto',
+  marginBlock: "auto",
+  paddingBlock: "auto",
   variants: {
     accent: {
       true: mutedStyles,
