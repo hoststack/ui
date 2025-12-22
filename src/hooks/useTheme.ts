@@ -7,7 +7,7 @@ import { useLocalStorage, useMountSSR } from "../index";
 export default function useTheme(): IUseTheme {
   const isBrowser = useMountSSR();
   const [systemTheme, setSystemTheme] = useState<boolean>(false);
-  const [theme, setLocalStorageTheme] = useLocalStorage<TThemeMode>("cosmo-ui-theme", "system");
+  const [theme, setLocalStorageTheme] = useLocalStorage<TThemeMode>("hoststack-ui-theme", "system");
   const [isDarkTheme, setIsDarkTheme] = useState<boolean | undefined>();
 
   const checkDarkMode = (): boolean => {
