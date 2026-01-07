@@ -68,9 +68,6 @@ export default function ProviderToggle(): JSX.Element {
     },
   ] as ISelect["options"];
 
-  // Determine current display theme (for UI display)
-  const displayTheme =
-    savedThemePreference === "system" ? `system (${systemPreference})` : savedThemePreference;
   const currentTheme = isMounted
     ? savedThemePreference === "system"
       ? "system"

@@ -1,52 +1,46 @@
 import { pulse, styled } from "../../stoop.config";
 
-export const ButtonStyled = styled(
-  "button",
-  {
-    "&:active": {
-      outline: 0,
-      transform: "translateY(1px)",
-    },
-
-    "&:disabled": {
-      cursor: "not-allowed",
-      opacity: "$light",
-    },
-    "&:focus, &:focus-visible": {
-      outline: 0,
-    },
-    alignContent: "center",
-    alignItems: "center",
-    appearance: "none",
-    backgroundColor: "$surface",
-    border: "1px solid $border",
-    color: "$text",
-    cursor: "pointer",
-    display: "inline-flex",
-    fontFamily: "$default",
-    fontSize: "$default",
-    fontWeight: 600,
-    justifyContent: "center",
-    letterSpacing: "-0.02em",
-    lineHeight: "$lineHeights.default",
-    margin: 0,
-    minHeight: "34px",
+export const ButtonStyled = styled("button", {
+  "&:active": {
     outline: 0,
-    padding: "$smallest $small",
-    phone: {
-      minHeight: "33px",
-      padding: "$smallest $small",
-    },
-    position: "relative",
-    textOverflow: "ellipsis",
-
-    transition: "$default",
-
-    verticalAlign: "middle",
-    whiteSpace: "nowrap",
-    width: "fit-content",
+    transform: "translateY(1px)",
   },
-  {
+
+  "&:disabled": {
+    cursor: "not-allowed",
+    opacity: "$light",
+  },
+  "&:focus, &:focus-visible": {
+    outline: 0,
+  },
+  alignContent: "center",
+  alignItems: "center",
+  appearance: "none",
+  backgroundColor: "$surface",
+  border: "1px solid $border",
+  color: "$text",
+  cursor: "pointer",
+  display: "inline-flex",
+  fontFamily: "$default",
+  fontSize: "$default",
+  fontWeight: 600,
+  justifyContent: "center",
+  letterSpacing: "-0.02em",
+  lineHeight: "$lineHeights.default",
+  margin: 0,
+  minHeight: "34px",
+  outline: 0,
+  padding: "$smallest $small",
+  phone: {
+    minHeight: "33px",
+    padding: "$smallest $small",
+  },
+  position: "relative",
+  textOverflow: "ellipsis",
+
+  transition: "$default",
+
+  variants: {
     block: {
       true: {
         display: "block",
@@ -110,18 +104,17 @@ export const ButtonStyled = styled(
       },
     },
   },
-);
+  verticalAlign: "middle",
+  whiteSpace: "nowrap",
+  width: "fit-content",
+});
 
-export const ButtonIconStyled = styled(
-  "span",
-  {
-    display: "inline-flex",
-    justifyContent: "center",
-    transition: "$default",
+export const ButtonIconStyled = styled("span", {
+  display: "inline-flex",
+  justifyContent: "center",
+  transition: "$default",
 
-    verticalAlign: "middle",
-  },
-  {
+  variants: {
     align: {
       left: {
         marginRight: "$small",
@@ -143,7 +136,8 @@ export const ButtonIconStyled = styled(
       },
     },
   },
-);
+  verticalAlign: "middle",
+});
 
 export const ButtonLoadingStyled = styled("div", {
   alignItems: "center",
@@ -155,19 +149,14 @@ export const ButtonLoadingStyled = styled("div", {
   zIndex: 1,
 });
 
-export const NewDotStyled = styled(
-  "span",
-  {
-    animation: `${pulse} 3s infinite linear`,
-    borderRadius: "50%",
-    height: "8px",
-    position: "absolute",
-    right: "-3px",
-    top: "-3px",
-    width: "8px",
-    zIndex: 2,
-  },
-  {
+export const NewDotStyled = styled("span", {
+  animation: `${pulse} 3s infinite linear`,
+  borderRadius: "50%",
+  height: "8px",
+  position: "absolute",
+  right: "-3px",
+  top: "-3px",
+  variants: {
     theme: {
       default: {
         backgroundColor: "$yellow",
@@ -183,4 +172,6 @@ export const NewDotStyled = styled(
       },
     },
   },
-);
+  width: "8px",
+  zIndex: 2,
+});

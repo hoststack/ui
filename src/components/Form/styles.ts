@@ -1,11 +1,7 @@
 import { styled } from "../../stoop.config";
 
-export const FormStyled = styled(
-  "form",
-  {
-    width: "100%",
-  },
-  {
+export const FormStyled = styled("form", {
+  variants: {
     disabled: {
       true: {
         cursor: "not-allowed",
@@ -13,4 +9,5 @@ export const FormStyled = styled(
       },
     },
   },
-);
+  width: "100%",
+});

@@ -13,25 +13,19 @@ export const PopoverTriggerStyled = styled("div", {
   verticalAlign: "middle",
 });
 
-export const PopoverContentStyled = styled(
-  "div",
-  {
-    "&::-webkit-scrollbar": {
-      display: "none",
-    },
-    backdropFilter: "blur(16px)",
-    backgroundColor: "$glass",
-    border: "1px solid $border",
-    overflowY: "auto",
-    padding: "$small $medium",
-    pointerEvents: "auto",
-    textAlign: "left !important",
-    transformOrigin: "top center",
-    width: "100%",
-    willChange: "transform, opacity",
-    zIndex: "$popover",
+export const PopoverContentStyled = styled("div", {
+  "&::-webkit-scrollbar": {
+    display: "none",
   },
-  {
+  backdropFilter: "blur(16px)",
+  backgroundColor: "$glass",
+  border: "1px solid $border",
+  overflowY: "auto",
+  padding: "$small $medium",
+  pointerEvents: "auto",
+  textAlign: "left !important",
+  transformOrigin: "top center",
+  variants: {
     animation: {
       false: {
         animation: `${fadeOutDown} 180ms ease-out`,
@@ -70,6 +64,9 @@ export const PopoverContentStyled = styled(
       },
     },
   },
-);
+  width: "100%",
+  willChange: "transform, opacity",
+  zIndex: "$popover",
+});
 
 export default PopoverStyled;

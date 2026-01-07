@@ -1,19 +1,16 @@
 import { styled } from "../../stoop.config";
 
-export const ViewStyled = styled(
-  "section",
-  {
-    backgroundColor: "$background",
-    color: "$text",
-    paddingLeft: "$medium",
-    paddingRight: "$medium",
-    phone: {
-      paddingLeft: "$small",
-      paddingRight: "$small",
-    },
-    position: "relative",
+export const ViewStyled = styled("section", {
+  backgroundColor: "$background",
+  color: "$text",
+  paddingLeft: "$medium",
+  paddingRight: "$medium",
+  phone: {
+    paddingLeft: "$small",
+    paddingRight: "$small",
   },
-  {
+  position: "relative",
+  variants: {
     inverted: {
       true: {
         backgroundColor: "$background",
@@ -21,16 +18,12 @@ export const ViewStyled = styled(
       },
     },
   },
-);
+});
 
-export const ViewContainerStyled = styled(
-  "div",
-  {
-    position: "relative",
+export const ViewContainerStyled = styled("div", {
+  position: "relative",
 
-    zIndex: 2,
-  },
-  {
+  variants: {
     app: {
       false: {
         width: "100%",
@@ -62,6 +55,7 @@ export const ViewContainerStyled = styled(
       },
     },
   },
-);
+  zIndex: 2,
+});
 
 export default ViewStyled;

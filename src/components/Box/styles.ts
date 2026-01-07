@@ -1,21 +1,20 @@
 import { fadeOut, styled } from "../../stoop.config";
 import { TextStyled } from "../Text/styles";
 
-export const BoxStyled = styled(
-  "div",
-  {
-    backgroundColor: "$surface",
-    border: "1px solid $border",
-    color: "$text",
-    display: "block",
-    height: "100%",
-    overflow: "hidden",
-    position: "relative",
-    transition: "$default",
+export const BoxStyled = styled("div", {
+  backgroundColor: "$surface",
+  border: "1px solid $border",
+  boxSizing: "border-box",
+  color: "$text",
+  display: "block",
+  height: "100%",
+  maxWidth: "100%",
+  minWidth: 0,
+  overflow: "hidden",
+  position: "relative",
+  transition: "$default",
 
-    width: "100%",
-  },
-  {
+  variants: {
     animation: {
       true: {
         animation: `${fadeOut} 200ms ease-in-out`,
@@ -110,18 +109,16 @@ export const BoxStyled = styled(
       },
     },
   },
-);
+  width: "100%",
+});
 
-export const BoxHeaderStyled = styled(
-  "div",
-  {
-    backgroundColor: "$surfaceLight",
-    borderBottom: "1px solid $borderLight",
-    color: "$text",
-    fontFamily: "$default",
-    fontWeight: 600,
-  },
-  {
+export const BoxHeaderStyled = styled("div", {
+  backgroundColor: "$surfaceLight",
+  borderBottom: "1px solid $borderLight",
+  color: "$text",
+  fontFamily: "$default",
+  fontWeight: 600,
+  variants: {
     padding: {
       default: {
         padding: "$small $medium",
@@ -135,20 +132,17 @@ export const BoxHeaderStyled = styled(
       },
     },
   },
-);
+});
 
 export const BoxImageStyled = styled("div", {
   height: "100%",
   width: "100%",
 });
 
-export const BoxFooterStyled = styled(
-  "div",
-  {
-    borderTop: "1px solid $borderLight",
-    color: "$text",
-  },
-  {
+export const BoxFooterStyled = styled("div", {
+  borderTop: "1px solid $borderLight",
+  color: "$text",
+  variants: {
     fill: {
       true: {
         backgroundColor: "$surfaceLight",
@@ -168,12 +162,10 @@ export const BoxFooterStyled = styled(
       },
     },
   },
-);
+});
 
-export const BoxInnerStyled = styled(
-  "div",
-  {},
-  {
+export const BoxInnerStyled = styled("div", {
+  variants: {
     padding: {
       default: {
         padding: "$medium",
@@ -186,7 +178,7 @@ export const BoxInnerStyled = styled(
       },
     },
   },
-);
+});
 
 export const BoxFlexStyled = styled("div", {
   height: "100%",
@@ -210,17 +202,14 @@ export const BoxLoadingStyled = styled("div", {
   position: "absolute",
 });
 
-export const BoxExpanderTrigger = styled(
-  "div",
-  {
-    bottom: "$small",
-    display: "flex",
-    justifyContent: "center",
-    left: 0,
-    position: "absolute",
-    right: 0,
-  },
-  {
+export const BoxExpanderTrigger = styled("div", {
+  bottom: "$small",
+  display: "flex",
+  justifyContent: "center",
+  left: 0,
+  position: "absolute",
+  right: 0,
+  variants: {
     expanded: {
       true: {
         bottom: "auto",
@@ -230,6 +219,6 @@ export const BoxExpanderTrigger = styled(
       },
     },
   },
-);
+});
 
 export default BoxStyled;

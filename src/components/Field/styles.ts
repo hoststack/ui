@@ -4,14 +4,10 @@ const interactiveStyles = {
   borderColor: "$text",
 };
 
-export const FieldStyled = styled(
-  "div",
-  {
-    position: "relative",
+export const FieldStyled = styled("div", {
+  position: "relative",
 
-    width: "100%",
-  },
-  {
+  variants: {
     disabled: {
       true: {
         cursor: "not-allowed",
@@ -19,7 +15,8 @@ export const FieldStyled = styled(
       },
     },
   },
-);
+  width: "100%",
+});
 
 export const FieldCoreStyled = styled("div", {
   "&:focus-within": {

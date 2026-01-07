@@ -4,14 +4,10 @@ const interactiveStyles = {
   borderColor: "$text",
 };
 
-export const InputStyled = styled(
-  "div",
-  {
-    position: "relative",
+export const InputStyled = styled("div", {
+  position: "relative",
 
-    width: "100%",
-  },
-  {
+  variants: {
     disabled: {
       true: {
         cursor: "not-allowed",
@@ -19,7 +15,8 @@ export const InputStyled = styled(
       },
     },
   },
-);
+  width: "100%",
+});
 
 export const InputCoreStyled = styled("div", {
   "&:focus-within": {

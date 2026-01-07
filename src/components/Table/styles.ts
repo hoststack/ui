@@ -68,21 +68,18 @@ export const TableRowStyles = styled("tr", {
   },
 });
 
-export const TableMobileRow = styled(
-  "div",
-  {
-    "&:not(:last-child)": {
-      borderBottom: "1px solid $borderLight",
-      marginBottom: "$smaller",
-      paddingBottom: "$smaller",
-    },
-    alignItems: "flex-start",
-    display: "flex",
-    gap: "$small",
-    justifyContent: "space-between",
-    padding: "$smaller 0",
+export const TableMobileRow = styled("div", {
+  "&:not(:last-child)": {
+    borderBottom: "1px solid $borderLight",
+    marginBottom: "$smaller",
+    paddingBottom: "$smaller",
   },
-  {
+  alignItems: "flex-start",
+  display: "flex",
+  gap: "$small",
+  justifyContent: "space-between",
+  padding: "$smaller 0",
+  variants: {
     isActions: {
       true: {
         alignItems: "center",
@@ -95,7 +92,7 @@ export const TableMobileRow = styled(
       },
     },
   },
-);
+});
 
 export const TableMobileLabel = styled("span", {
   color: "$text",
@@ -105,19 +102,16 @@ export const TableMobileLabel = styled("span", {
   opacity: "$light",
 });
 
-export const TableMobileValue = styled(
-  "div",
-  {
-    alignItems: "center",
-    color: "$text",
-    display: "flex",
-    flex: 1,
-    fontSize: "$default",
-    gap: "$smaller",
-    justifyContent: "flex-end",
-    textAlign: "right",
-  },
-  {
+export const TableMobileValue = styled("div", {
+  alignItems: "center",
+  color: "$text",
+  display: "flex",
+  flex: 1,
+  fontSize: "$default",
+  gap: "$smaller",
+  justifyContent: "flex-end",
+  textAlign: "right",
+  variants: {
     isActions: {
       true: {
         flex: "0 0 auto",
@@ -125,20 +119,16 @@ export const TableMobileValue = styled(
       },
     },
   },
-);
+});
 
-export const TableCellStyles = styled(
-  "td",
-  {
-    ...cellPaddingBase,
-    color: "$text",
-    fontSize: "$default",
-    fontWeight: 400,
-    lineHeight: 1.4,
-    padding: "$small $medium",
-    verticalAlign: "middle",
-  },
-  {
+export const TableCellStyles = styled("td", {
+  ...cellPaddingBase,
+  color: "$text",
+  fontSize: "$default",
+  fontWeight: 400,
+  lineHeight: 1.4,
+  padding: "$small $medium",
+  variants: {
     align: alignVariants,
     isAction: {
       true: {
@@ -152,36 +142,34 @@ export const TableCellStyles = styled(
       },
     },
   },
-);
+  verticalAlign: "middle",
+});
 
-export const TableHeaderCellStyles = styled(
-  "th",
-  {
-    ...cellPaddingBase,
-    "&:first-child": {
-      ...cellPaddingBase["&:first-child"],
-    },
-    "&:last-child": {
-      ...cellPaddingBase["&:last-child"],
-    },
-    "& > div": {
-      alignItems: "center",
-      display: "inline-flex",
-      gap: "$smaller",
-    },
-    backgroundColor: "$background",
-    borderBottom: "1px solid $borderLight",
-    color: "$text",
-    fontSize: "$small",
-    fontWeight: 600,
-    padding: "$small $medium",
-    textAlign: "left",
-    verticalAlign: "middle",
+export const TableHeaderCellStyles = styled("th", {
+  ...cellPaddingBase,
+  "&:first-child": {
+    ...cellPaddingBase["&:first-child"],
   },
-  {
+  "&:last-child": {
+    ...cellPaddingBase["&:last-child"],
+  },
+  "& > div": {
+    alignItems: "center",
+    display: "inline-flex",
+    gap: "$smaller",
+  },
+  backgroundColor: "$background",
+  borderBottom: "1px solid $borderLight",
+  color: "$text",
+  fontSize: "$small",
+  fontWeight: 600,
+  padding: "$small $medium",
+  textAlign: "left",
+  variants: {
     align: alignVariants,
   },
-);
+  verticalAlign: "middle",
+});
 
 export const AnimatedTableRow = styled(TableRowStyles, {
   animation: `${fadeIn} 200ms ease-in-out`,
@@ -225,18 +213,14 @@ export const TableSubRowStyles = styled("tr", {
   backgroundColor: "$surfaceLight",
 });
 
-export const TableSubCellStyles = styled(
-  "td",
-  {
-    ...cellPaddingBase,
-    backgroundColor: "transparent",
-    color: "$text",
-    fontSize: "$small",
-    fontWeight: 400,
-    padding: "$smaller $medium",
-    verticalAlign: "middle",
-  },
-  {
+export const TableSubCellStyles = styled("td", {
+  ...cellPaddingBase,
+  backgroundColor: "transparent",
+  color: "$text",
+  fontSize: "$small",
+  fontWeight: 400,
+  padding: "$smaller $medium",
+  variants: {
     align: alignVariants,
     isAction: {
       true: {
@@ -250,6 +234,7 @@ export const TableSubCellStyles = styled(
       },
     },
   },
-);
+  verticalAlign: "middle",
+});
 
 export default TableStyles;

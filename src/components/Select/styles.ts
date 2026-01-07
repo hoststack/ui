@@ -21,26 +21,20 @@ export const SelectTriggerStyled = styled("div", {
   verticalAlign: "middle",
 });
 
-export const SelectGroupStyled = styled(
-  "div",
-  {
-    "&::-webkit-scrollbar": {
-      display: "none",
-    },
-    backdropFilter: "blur(8px)",
-    backgroundColor: "$glass",
-    border: "1px solid $border",
-    lineBreak: "auto",
-    overflowY: "auto",
-    padding: "$smallest $smaller",
-    pointerEvents: "auto",
-    textAlign: "left !important",
-    transformOrigin: "top center",
-    width: "100%",
-    willChange: "transform, opacity",
-    zIndex: "$select",
+export const SelectGroupStyled = styled("div", {
+  "&::-webkit-scrollbar": {
+    display: "none",
   },
-  {
+  backdropFilter: "blur(8px)",
+  backgroundColor: "$glass",
+  border: "1px solid $border",
+  lineBreak: "auto",
+  overflowY: "auto",
+  padding: "$smallest $smaller",
+  pointerEvents: "auto",
+  textAlign: "left !important",
+  transformOrigin: "top center",
+  variants: {
     animation: {
       false: {
         animation: `${fadeOutDown} 200ms ease-out`,
@@ -52,38 +46,38 @@ export const SelectGroupStyled = styled(
       },
     },
   },
-);
+  width: "100%",
+  willChange: "transform, opacity",
+  zIndex: "$select",
+});
 
 export const SelectFilterStyled = styled("div", {
   ...stickyBase,
   padding: "$small",
 });
 
-export const SelectItemStyled = styled(
-  "div",
-  {
-    "&:active": {
-      transform: "translateY(1px)",
-    },
-    "&:hover": {
-      backgroundColor: "$surfaceHover",
-    },
-    alignItems: "center",
-    backgroundColor: "$background",
-    borderLeft: "2px solid transparent",
-    color: "$text",
-    cursor: "pointer",
-    display: "flex",
-    fontSize: "$default",
-    gap: "$small",
-    justifyContent: "space-between",
-    margin: "$smaller",
-    padding: "$smaller $small",
-    textAlign: "left",
-    transition: "$default",
-    userSelect: "none",
+export const SelectItemStyled = styled("div", {
+  "&:active": {
+    transform: "translateY(1px)",
   },
-  {
+  "&:hover": {
+    backgroundColor: "$surfaceHover",
+  },
+  alignItems: "center",
+  backgroundColor: "$background",
+  borderLeft: "2px solid transparent",
+  color: "$text",
+  cursor: "pointer",
+  display: "flex",
+  fontSize: "$default",
+  gap: "$small",
+  justifyContent: "space-between",
+  margin: "$smaller",
+  padding: "$smaller $small",
+  textAlign: "left",
+  transition: "$default",
+  userSelect: "none",
+  variants: {
     focused: {
       true: {
         backgroundColor: "$surfaceHover",
@@ -106,7 +100,7 @@ export const SelectItemStyled = styled(
       },
     },
   },
-);
+});
 
 export const SelectEmptyStyled = styled("div", {
   color: "$text",
@@ -124,15 +118,12 @@ export const SelectLabelStyled = styled("div", {
   padding: "$smaller $small $smallest $small",
 });
 
-export const SelectIconStyled = styled(
-  "div",
-  {
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "center",
-    transition: "$default",
-  },
-  {
+export const SelectIconStyled = styled("div", {
+  alignItems: "center",
+  display: "flex",
+  justifyContent: "center",
+  transition: "$default",
+  variants: {
     align: {
       left: {
         order: -1,
@@ -142,6 +133,6 @@ export const SelectIconStyled = styled(
       },
     },
   },
-);
+});
 
 export default SelectStyled;

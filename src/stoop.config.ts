@@ -105,13 +105,114 @@ const darkThemeConfig = {
 // Use breakpoints directly as media config (already flat)
 const media = breakpoints;
 
+// Global CSS configuration (automatically applied by Provider)
+const globalCssConfig = {
+  "*": {
+    boxSizing: "border-box",
+    margin: 0,
+    marginBlock: 0,
+    padding: 0,
+    paddingBlock: 0,
+  },
+  "*:focus": {
+    outline: "$yellow",
+  },
+  "::selection": {
+    backgroundColor: "$text",
+    color: "$background",
+  },
+  "@import":
+    "url('https://fonts.googleapis.com/css2?family=Archivo:wght@600&family=DM+Sans:wght@400;600&display=swap')",
+  "a, a:visited, a:active, a:hover": {
+    color: "inherit",
+    textDecoration: "none",
+    WebkitTapHighlightColor: "transparent",
+  },
+  body: {
+    "[data-theme='dark'] &": {
+      colorScheme: "dark",
+    },
+    backgroundColor: "$background",
+    color: "$text",
+    fontFamily: "$default",
+    fontFeatureSettings: '"zero" 1, "tnum" 1, "calt" 1, "liga" 1, "case" 1',
+    fontOpticalSizing: "auto",
+    fontSize: "$default",
+    fontWeight: 400,
+    height: "100%",
+    letterSpacing: "0.015em",
+    lineHeight: "$default",
+    margin: 0,
+    minHeight: "100vh",
+    MozOsxFontSmoothing: "grayscale",
+    overflowX: "hidden",
+    padding: 0,
+    textRendering: "optimizeLegibility",
+    WebkitFontSmoothing: "antialiased",
+  },
+  "button, input, textarea, select": {
+    "&:disabled": {
+      cursor: "not-allowed",
+      opacity: "$light",
+    },
+    cursor: "pointer",
+    fontFamily: "inherit",
+    fontSize: "inherit",
+  },
+  "h1, h2, h3, h4, h5, h6": {
+    fontFeatureSettings: '"zero" 1, "tnum" 1, "calt" 1, "liga" 1, "case" 1',
+    fontWeight: 600,
+    lineHeight: "$small",
+    margin: 0,
+    textRendering: "optimizeLegibility",
+  },
+  html: {
+    boxSizing: "border-box",
+    fontSize: "100%",
+    height: "100%",
+    margin: 0,
+    marginBlock: 0,
+    padding: 0,
+    paddingBlock: 0,
+    scrollBehavior: "smooth",
+  },
+  "img, svg": {
+    display: "block",
+    maxWidth: "100%",
+  },
+  "input, textarea, select": {
+    cursor: "text",
+  },
+  p: {
+    lineHeight: "$default",
+    margin: 0,
+  },
+  reduceMotion: {
+    "*:not([data-allow-motion])": {
+      animation: "none !important",
+      scrollBehavior: "auto !important",
+      transition: "none !important",
+    },
+  },
+  svg: {
+    alignSelf: "center",
+    verticalAlign: "middle",
+  },
+  "ul, ol": {
+    listStyle: "none",
+    margin: 0,
+    padding: 0,
+  },
+};
+
 // Create Stoop instance - types are inferred from createStoop
 // We'll create the instance with themes for Provider support
 const stoopInstance = createStoop({
+  globalCss: globalCssConfig,
   theme: defaultTheme,
   themes: {
     light: defaultTheme,
-    dark: darkThemeConfig, // Will be converted to theme via createTheme below
+    dark: darkThemeConfig,
   },
   media,
   utils: {
@@ -400,6 +501,7 @@ export const {
 } = stoopInstance;
 
 // Create dark theme (for backward compatibility)
+// Note: darkThemeConfig is already merged via themes config, but we keep this for any direct usage
 export const darkTheme = createTheme(darkThemeConfig);
 
 // Export keyframes with proper return types

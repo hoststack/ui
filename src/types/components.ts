@@ -414,8 +414,10 @@ export interface IInput extends ComponentPropsWithRef<"input"> {
  * />
  * ```
  */
-export interface IPlaces
-  extends Omit<IInput, "submitFunction" | "submit" | "reveal" | "copy" | "reset"> {
+export interface IPlaces extends Omit<
+  IInput,
+  "submitFunction" | "submit" | "reveal" | "copy" | "reset"
+> {
   /** Google Maps API key for Places API */
   apiKey: string;
   /** Callback when a place is selected from the dropdown */

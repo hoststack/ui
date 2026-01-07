@@ -1,11 +1,11 @@
 import { type JSX } from "react";
 
 import { type IProvider, StoopProvider } from "../../index";
-import { ProviderStyled, providerReset } from "./styles";
+import { ProviderStyled } from "./styles";
 import { ToastController } from "./ToastController";
 
-// Call global CSS BEFORE the component definition (before React renders)
-providerReset();
+// Note: globalCss is automatically applied by StoopProvider when globalCss is passed to createStoop
+// No need to manually call it here - it's handled in stoop.config.ts
 
 export default function Provider({ children, css, dark }: IProvider): JSX.Element {
   const themeName = dark ? "dark" : "light";

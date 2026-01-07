@@ -1,8 +1,15 @@
+/// <reference types="google.maps" />
 import { Loader } from "@googlemaps/js-api-loader";
 import { useEffect, useRef, useState, type JSX } from "react";
 
 import { Loading, type IMaps } from "../../index";
 import { MapsStyled } from "./styles";
+
+declare global {
+  interface Window {
+    google?: typeof google;
+  }
+}
 
 export default function Maps({
   apiKey,
@@ -50,33 +57,39 @@ export default function Maps({
           version: "weekly",
         });
 
-        await (loader as any).importLibrary("geocoding");
+        await (loader as { importLibrary: (lib: string) => Promise<unknown> }).importLibrary(
+          "geocoding",
+        );
 
         if (!isActive) return;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const geocoder = new (window as any).google.maps.Geocoder();
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        geocoder.geocode({ address: center }, (results: any, status: string) => {
-          if (!isActive) return;
-          if (status === "OK" && results?.[0]?.geometry?.location) {
-            const { location } = results[0].geometry;
-            const newCenter = {
-              lat: location.lat(),
-              lng: location.lng(),
-            };
+        if (!window.google?.maps?.Geocoder) return;
 
-            setResolvedCenter((prev) => {
-              if (prev?.lat === newCenter.lat && prev?.lng === newCenter.lng) return prev;
+        const geocoder = new window.google.maps.Geocoder();
 
-              return newCenter;
-            });
-          } else {
-            setResolvedCenter(null);
-            setGeoError("Unable to locate that address.");
-          }
-          setIsLoading(false);
-        });
+        geocoder.geocode(
+          { address: center },
+          (results: google.maps.GeocoderResult[] | null, status: google.maps.GeocoderStatus) => {
+            if (!isActive) return;
+            if (status === "OK" && results?.[0]?.geometry?.location) {
+              const { location } = results[0].geometry;
+              const newCenter = {
+                lat: location.lat(),
+                lng: location.lng(),
+              };
+
+              setResolvedCenter((prev) => {
+                if (prev?.lat === newCenter.lat && prev?.lng === newCenter.lng) return prev;
+
+                return newCenter;
+              });
+            } else {
+              setResolvedCenter(null);
+              setGeoError("Unable to locate that address.");
+            }
+            setIsLoading(false);
+          },
+        );
       }
     };
 
@@ -98,13 +111,12 @@ export default function Maps({
         version: "weekly",
       });
 
-      await (loader as any).importLibrary("maps");
+      await (loader as { importLibrary: (lib: string) => Promise<unknown> }).importLibrary("maps");
 
       if (!isActive) return;
 
-      if (mapRef.current) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        mapInstanceRef.current = new (window as any).google.maps.Map(mapRef.current, {
+      if (mapRef.current && window.google?.maps?.Map) {
+        mapInstanceRef.current = new window.google.maps.Map(mapRef.current, {
           center: resolvedCenter,
           mapTypeId: mapType,
           zoom,

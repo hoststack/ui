@@ -1,12 +1,9 @@
 import { styled } from "../../stoop.config";
 import { TextStyled } from "../Text/styles";
 
-export const StackStyled = styled(
-  "div",
-  {
-    margin: 0,
-  },
-  {
+export const StackStyled = styled("div", {
+  margin: 0,
+  variants: {
     direction: {
       column: {
         display: "flex",
@@ -44,6 +41,6 @@ export const StackStyled = styled(
       },
     },
   },
-);
+});
 
 export default StackStyled;
