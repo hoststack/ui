@@ -1,4 +1,4 @@
-import { fadeIn, styled } from "../../stitches.config";
+import { fadeIn, styled } from "../../stoop.config";
 
 const cellPaddingBase = {
   "&:first-child": {
@@ -26,7 +26,7 @@ const rowHoverBase = {
   transition: "$default",
 };
 
-export const TableStitches = styled("div", {
+export const TableStyles = styled("div", {
   backgroundColor: "$background",
   border: "1px solid $border",
   overflow: "hidden",
@@ -39,7 +39,7 @@ export const TableStitches = styled("div", {
   width: "100%",
 });
 
-export const TableCoreStitches = styled("table", {
+export const TableCoreStyles = styled("table", {
   borderCollapse: "separate",
   borderSpacing: 0,
   fontSize: "$default",
@@ -59,7 +59,7 @@ export const TableMobileView = styled("div", {
   },
 });
 
-export const TableRowStitches = styled("tr", {
+export const TableRowStyles = styled("tr", {
   ...rowHoverBase,
   "tbody &": {
     "&:hover": {
@@ -121,7 +121,7 @@ export const TableMobileValue = styled("div", {
   },
 });
 
-export const TableCellStitches = styled("td", {
+export const TableCellStyles = styled("td", {
   ...cellPaddingBase,
   color: "$text",
   fontSize: "$default",
@@ -145,7 +145,7 @@ export const TableCellStitches = styled("td", {
   verticalAlign: "middle",
 });
 
-export const TableHeaderCellStitches = styled("th", {
+export const TableHeaderCellStyles = styled("th", {
   ...cellPaddingBase,
   "&:first-child": {
     ...cellPaddingBase["&:first-child"],
@@ -171,7 +171,7 @@ export const TableHeaderCellStitches = styled("th", {
   verticalAlign: "middle",
 });
 
-export const AnimatedTableRow = styled(TableRowStitches, {
+export const AnimatedTableRow = styled(TableRowStyles, {
   animation: `${fadeIn} 200ms ease-in-out`,
 });
 
@@ -208,12 +208,12 @@ export const TableEmptyStateCell = styled("td", {
   textAlign: "center",
 });
 
-export const TableSubRowStitches = styled("tr", {
+export const TableSubRowStyles = styled("tr", {
   ...rowHoverBase,
   backgroundColor: "$surfaceLight",
 });
 
-export const TableSubCellStitches = styled("td", {
+export const TableSubCellStyles = styled("td", {
   ...cellPaddingBase,
   backgroundColor: "transparent",
   color: "$text",
@@ -237,4 +237,4 @@ export const TableSubCellStitches = styled("td", {
   verticalAlign: "middle",
 });
 
-export default TableStitches;
+export default TableStyles;

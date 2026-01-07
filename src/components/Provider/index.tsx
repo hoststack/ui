@@ -1,31 +1,27 @@
-import { useEffect, type JSX } from "react";
+import { type JSX } from "react";
 
-import { type IProvider } from "../../index";
-import { darkTheme } from "../../stitches.config";
-import { ProviderStyled, providerReset } from "./styles";
+import { type IProvider, StoopProvider } from "../../index";
+import { ProviderStyled } from "./styles";
 import { ToastController } from "./ToastController";
 
+// Note: globalCss is automatically applied by StoopProvider when globalCss is passed to createStoop
+// No need to manually call it here - it's handled in stoop.config.ts
+
 export default function Provider({ children, css, dark }: IProvider): JSX.Element {
-  const isDarkMode = Boolean(dark);
+  const themeName = dark ? "dark" : "light";
 
-  providerReset();
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add(darkTheme);
-    } else {
-      document.body.classList.remove(darkTheme);
-    }
-
-    return (): void => {
-      document.body.classList.remove(darkTheme);
-    };
-  }, [isDarkMode]);
+  if (!StoopProvider) {
+    throw new Error(
+      "Provider is not available. Make sure themes config is provided to createStoop.",
+    );
+  }
 
   return (
-    <ProviderStyled css={css}>
-      <ToastController />
-      {children}
-    </ProviderStyled>
+    <StoopProvider attribute="data-theme" defaultTheme={themeName} storageKey="airindex-ui-theme">
+      <ProviderStyled css={css}>
+        <ToastController />
+        {children}
+      </ProviderStyled>
+    </StoopProvider>
   );
 }

@@ -1,4 +1,4 @@
-import { slideInScale, slideOutScale, styled } from "../../stitches.config";
+import { slideInScale, slideOutScale, styled } from "../../stoop.config";
 
 export const MenuStyled = styled("div", {
   display: "inline-flex",
@@ -92,7 +92,7 @@ export const MenuItemStyled = styled("div", {
       true: {
         backgroundColor: "$surfaceLight",
         borderLeft: "2px solid $yellow",
-        fontFamily: "$default",
+        fontFamily: "$fonts.default",
         fontWeight: 400,
       },
     },

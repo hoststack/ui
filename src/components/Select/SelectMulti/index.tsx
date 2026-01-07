@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX, type MouseEvent as ReactMouseEvent } from "react";
 import toast from "react-hot-toast";
 
 import { CrossCircledIcon } from "../../../icons";
@@ -177,7 +177,7 @@ export default function SelectMulti({
       <SelectTriggerStyled
         ref={triggerRef}
         css={triggerCSS}
-        onClick={(e): void => {
+        onClick={(e: ReactMouseEvent<HTMLDivElement>): void => {
           e.stopPropagation();
           if (!disabled) {
             handleClick();
@@ -224,7 +224,7 @@ export default function SelectMulti({
             filteredOptions.map((option) => (
               <SelectItemStyled
                 key={option.value}
-                ref={(el) => {
+                ref={(el: HTMLDivElement | null) => {
                   optionRefs.current[option.value] = el;
                 }}
                 focused={option.value === focused && !isPhone}

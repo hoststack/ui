@@ -12,15 +12,14 @@ import * as C from "../../src/index";
 
 export default function IconDemo(): JSX.Element {
   return (
-    <C.Stack css={{ 
-      display: "grid",
-      gap: "$large",
-      gridTemplateColumns: "repeat(3, 1fr)" 
-    }}>
+    <C.Stack
+      css={{
+        display: "grid",
+        gap: "$large",
+        gridTemplateColumns: "repeat(3, 1fr)",
+      }}>
       {/* Basic Usage */}
-      <C.Box header={
-        <C.Text as="h6">Basic Usage</C.Text>
-      }>
+      <C.Box header={<C.Text as="h6">Basic Usage</C.Text>}>
         <C.Stack direction="row">
           <C.Icon radix={<CheckCircledIcon />} />
           <C.Icon radix={<CheckCircledIcon />} />
@@ -30,9 +29,7 @@ export default function IconDemo(): JSX.Element {
       </C.Box>
 
       {/* Sizes */}
-      <C.Box header={
-        <C.Text as="h4">Sizes</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Sizes</C.Text>}>
         <C.Stack direction="row">
           <C.Icon forceSize={16} radix={<CheckCircledIcon />} />
           <C.Icon forceSize={24} radix={<CheckCircledIcon />} />
@@ -42,9 +39,7 @@ export default function IconDemo(): JSX.Element {
       </C.Box>
 
       {/* Colors */}
-      <C.Box header={
-        <C.Text as="h4">Colors</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Colors</C.Text>}>
         <C.Stack direction="row">
           <C.Icon forceColor="text" radix={<CheckCircledIcon />} />
           <C.Icon forceColor="yellow" radix={<CheckCircledIcon />} />
@@ -54,9 +49,7 @@ export default function IconDemo(): JSX.Element {
       </C.Box>
 
       {/* Inline Usage */}
-      <C.Box header={
-        <C.Text as="h4">Inline Usage</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Inline Usage</C.Text>}>
         <C.Stack>
           <C.Text>
             Text with <C.Icon inline="smaller" radix={<CheckCircledIcon />} /> icon
@@ -68,9 +61,7 @@ export default function IconDemo(): JSX.Element {
       </C.Box>
 
       {/* System Icons */}
-      <C.Box header={
-        <C.Text as="h4">System Icons</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">System Icons</C.Text>}>
         <C.Stack direction="row">
           <C.Icon radix={<ArrowRightIcon />} />
           <C.Icon radix={<ExclamationTriangleIcon />} />
@@ -80,27 +71,13 @@ export default function IconDemo(): JSX.Element {
       </C.Box>
 
       {/* Combinations */}
-      <C.Box header={
-        <C.Text as="h4">Combinations</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Combinations</C.Text>}>
         <C.Stack direction="row">
-          <C.Icon 
-            forceColor="yellow" 
-            forceSize={32} 
-            radix={<CheckCircledIcon />} 
-          />
-          <C.Icon 
-            forceColor="border" 
-            forceSize={32} 
-            radix={<ExclamationTriangleIcon />} 
-          />
-          <C.Icon 
-            forceColor="text" 
-            forceSize={32} 
-            radix={<CrossCircledIcon />} 
-          />
+          <C.Icon forceColor="yellow" forceSize={32} radix={<CheckCircledIcon />} />
+          <C.Icon forceColor="border" forceSize={32} radix={<ExclamationTriangleIcon />} />
+          <C.Icon forceColor="text" forceSize={32} radix={<CrossCircledIcon />} />
         </C.Stack>
       </C.Box>
     </C.Stack>
   );
-} 
+}

@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 import Box from "../Box";
 import Button from "../Button";
 
@@ -55,8 +55,8 @@ export const AccordionButtonStyled = styled(Button, {
     },
   },
   whiteSpace: "normal",
-  width: "100%",
 
+  width: "100%",
   wordBreak: "break-word",
 });
 
@@ -68,7 +68,6 @@ export const AccordionListContentStyled = styled("div", {
   border: "1px solid transparent",
   overflow: "hidden",
   transition: "all 200ms ease-out",
-
   variants: {
     expanded: {
       false: {

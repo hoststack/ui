@@ -2,7 +2,8 @@
 import { Maps, Stack, Text, View } from "../../src";
 
 export default function MapsDemo() {
-  const apiKey = (typeof process !== "undefined" && process.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) || "";
+  const apiKey =
+    (typeof process !== "undefined" && process.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) || "";
 
   if (!apiKey) {
     return (
@@ -11,7 +12,9 @@ export default function MapsDemo() {
         <Text>
           To use this demo, please set the NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable.
         </Text>
-        <Text accent>For demo purposes, the API key would be loaded from environment variables.</Text>
+        <Text accent>
+          For demo purposes, the API key would be loaded from environment variables.
+        </Text>
       </View>
     );
   }
@@ -28,30 +31,17 @@ export default function MapsDemo() {
 
         <div>
           <Text as="h3">Default Map (NYC Coordinates)</Text>
-          <Maps 
-            apiKey={apiKey} 
-            center={{ lat: 40.7128, lng: -74.0060 }}
-          />
+          <Maps apiKey={apiKey} center={{ lat: 40.7128, lng: -74.006 }} />
         </div>
 
         <div>
           <Text as="h3">Address: "London, UK"</Text>
-          <Maps
-            apiKey={apiKey}
-            center="London, UK"
-            height="400px"
-            zoom={13}
-          />
+          <Maps apiKey={apiKey} center="London, UK" height="400px" zoom={13} />
         </div>
 
         <div>
           <Text as="h3">Address: "Times Square, New York"</Text>
-          <Maps
-            apiKey={apiKey}
-            center="Times Square, New York"
-            height="350px"
-            zoom={16}
-          />
+          <Maps apiKey={apiKey} center="Times Square, New York" height="350px" zoom={16} />
         </div>
 
         <div>
@@ -67,14 +57,9 @@ export default function MapsDemo() {
 
         <div>
           <Text as="h3">Address: "Eiffel Tower, Paris"</Text>
-          <Maps
-            apiKey={apiKey}
-            center="Eiffel Tower, Paris"
-            height="300px"
-            zoom={15}
-          />
+          <Maps apiKey={apiKey} center="Eiffel Tower, Paris" height="300px" zoom={15} />
         </div>
       </Stack>
     </View>
   );
-} 
+}

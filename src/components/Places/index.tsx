@@ -1,4 +1,4 @@
-import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
+import { Loader } from "@googlemaps/js-api-loader";
 import {
   ChangeEvent,
   KeyboardEvent,
@@ -20,7 +20,14 @@ import {
   useWindowDimensions,
   type IPlaces,
 } from "../../index";
+/// <reference types="google.maps" />
 import { PlacesStyled, PlacesDropdownStyled, PlacesItemStyled, PlacesEmptyStyled } from "./styles";
+
+declare global {
+  interface Window {
+    google?: typeof google;
+  }
+}
 
 interface PlacePrediction {
   description: string;
@@ -83,19 +90,18 @@ export default function Places({
     if (!apiKey || isReady) return;
 
     const initGoogleMaps = async (): Promise<void> => {
-      setOptions({
-        key: apiKey,
+      const loader = new Loader({
+        apiKey,
         libraries: ["places", "maps"],
-        v: "weekly",
+        version: "weekly",
       });
 
-      await importLibrary("places");
+      await (loader as { importLibrary: (lib: string) => Promise<unknown> }).importLibrary(
+        "places",
+      );
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { google } = window as any;
-
-      if (google?.maps?.places) {
-        serviceRef.current = new google.maps.places.AutocompleteService();
+      if (window.google?.maps?.places?.AutocompleteService) {
+        serviceRef.current = new window.google.maps.places.AutocompleteService();
         setIsReady(true);
       }
     };

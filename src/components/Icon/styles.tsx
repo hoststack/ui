@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 export const IconStyled = styled("span", {
   display: "inline-flex",

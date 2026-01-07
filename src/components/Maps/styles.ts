@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 export const MapsStyled = styled("div", {
   height: "400px",

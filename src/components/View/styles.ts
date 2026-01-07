@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 export const ViewStyled = styled("section", {
   backgroundColor: "$background",
@@ -18,8 +18,6 @@ export const ViewStyled = styled("section", {
       },
     },
   },
-
-  width: "100%",
 });
 
 export const ViewContainerStyled = styled("div", {
@@ -57,7 +55,6 @@ export const ViewContainerStyled = styled("div", {
       },
     },
   },
-
   zIndex: 2,
 });
 

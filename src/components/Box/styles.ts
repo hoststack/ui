@@ -1,15 +1,19 @@
-import { fadeOut, styled } from "../../stitches.config";
+import { fadeOut, styled } from "../../stoop.config";
 import { TextStyled } from "../Text/styles";
 
-export const BoxStyled = styled("article", {
+export const BoxStyled = styled("div", {
   backgroundColor: "$surface",
   border: "1px solid $border",
+  boxSizing: "border-box",
   color: "$text",
   display: "block",
   height: "100%",
+  maxWidth: "100%",
+  minWidth: 0,
   overflow: "hidden",
   position: "relative",
   transition: "$default",
+
   variants: {
     animation: {
       true: {
@@ -32,7 +36,7 @@ export const BoxStyled = styled("article", {
     collapsed: {
       true: {
         "&::after": {
-          background: "linear-gradient(to bottom, transparent 0%, $colors$background 100%)",
+          background: "linear-gradient(to bottom, transparent 0%, $background 100%)",
           bottom: 0,
           content: "",
           height: "40%",
@@ -52,17 +56,17 @@ export const BoxStyled = styled("article", {
     hover: {
       true: {
         "&:hover": {
-          borderColor: "$text",
-          borderTopColor: "$text",
-          img: {
+          "& img": {
             transform: "scale(1.02)",
           },
+          borderColor: "$text",
+          borderTopColor: "$text",
           transform: "translateY(-2px)",
         },
-        cursor: "pointer",
-        img: {
+        "& img": {
           transition: "$default",
         },
+        cursor: "pointer",
       },
     },
     loading: {
@@ -105,7 +109,6 @@ export const BoxStyled = styled("article", {
       },
     },
   },
-
   width: "100%",
 });
 
@@ -115,7 +118,6 @@ export const BoxHeaderStyled = styled("div", {
   color: "$text",
   fontFamily: "$default",
   fontWeight: 600,
-
   variants: {
     padding: {
       default: {
@@ -140,7 +142,6 @@ export const BoxImageStyled = styled("div", {
 export const BoxFooterStyled = styled("div", {
   borderTop: "1px solid $borderLight",
   color: "$text",
-
   variants: {
     fill: {
       true: {
@@ -208,7 +209,6 @@ export const BoxExpanderTrigger = styled("div", {
   left: 0,
   position: "absolute",
   right: 0,
-
   variants: {
     expanded: {
       true: {

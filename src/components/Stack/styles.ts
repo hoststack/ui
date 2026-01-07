@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 import { TextStyled } from "../Text/styles";
 
 export const StackStyled = styled("div", {

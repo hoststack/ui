@@ -63,13 +63,15 @@ export function App(): JSX.Element {
   const { isDarkTheme } = C.useTheme();
 
   // Initialize from URL hash or default to "avatar"
-  const getInitialDemo = () => {
+  const getInitialDemo = (): string => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash.slice(1); // Remove the '#'
+
       if (hash && DEMO_OPTIONS.some((opt) => opt.value === hash.toLowerCase())) {
         return hash.toLowerCase();
       }
     }
+
     return "avatar";
   };
 
@@ -84,15 +86,17 @@ export function App(): JSX.Element {
 
   // Listen for hash changes (browser back/forward)
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleHashChange = (): void => {
       const hash = window.location.hash.slice(1);
+
       if (hash && DEMO_OPTIONS.some((opt) => opt.value === hash.toLowerCase())) {
         setSelectedDemo(hash.toLowerCase());
       }
     };
 
     window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+
+    return (): void => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   // Get the current demo component

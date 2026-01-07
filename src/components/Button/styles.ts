@@ -1,4 +1,4 @@
-import { pulse, styled } from "../../stitches.config";
+import { pulse, styled } from "../../stoop.config";
 
 export const ButtonStyled = styled("button", {
   "&:active": {
@@ -26,7 +26,7 @@ export const ButtonStyled = styled("button", {
   fontWeight: 600,
   justifyContent: "center",
   letterSpacing: "-0.02em",
-  lineHeight: "$default",
+  lineHeight: "$lineHeights.default",
   margin: 0,
   minHeight: "34px",
   outline: 0,
@@ -56,7 +56,7 @@ export const ButtonStyled = styled("button", {
     small: {
       true: {
         fontSize: "$small",
-        lineHeight: "$small",
+        lineHeight: "$lineHeights.small",
         minHeight: "28px",
         padding: "$smallest $small",
 
@@ -104,7 +104,6 @@ export const ButtonStyled = styled("button", {
       },
     },
   },
-
   verticalAlign: "middle",
   whiteSpace: "nowrap",
   width: "fit-content",
@@ -114,6 +113,7 @@ export const ButtonIconStyled = styled("span", {
   display: "inline-flex",
   justifyContent: "center",
   transition: "$default",
+
   variants: {
     align: {
       left: {
@@ -136,7 +136,6 @@ export const ButtonIconStyled = styled("span", {
       },
     },
   },
-
   verticalAlign: "middle",
 });
 

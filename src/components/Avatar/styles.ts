@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 export const AvatarStyled = styled("div", {
   alignSelf: "center",
@@ -34,6 +34,5 @@ export const AvatarStyled = styled("div", {
       },
     },
   },
-
   verticalAlign: "middle",
 });

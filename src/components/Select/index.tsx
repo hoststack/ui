@@ -1,4 +1,11 @@
-import { useEffect, useId, useRef, useState, type JSX } from "react";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type JSX,
+  type MouseEvent as ReactMouseEvent,
+} from "react";
 
 import {
   Input,
@@ -153,7 +160,7 @@ export default function Select({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         css={triggerCSS}
-        onClick={(e): void => {
+        onClick={(e: ReactMouseEvent<HTMLDivElement>): void => {
           e.stopPropagation();
           if (!disabled) {
             handleClick();
@@ -250,7 +257,7 @@ export default function Select({
             filteredOptions.map((option) => (
               <SelectItemStyled
                 key={option.value}
-                ref={(el) => {
+                ref={(el: HTMLDivElement | null) => {
                   optionRefs.current[option.value] = el;
                 }}
                 aria-selected={option.value === selected}

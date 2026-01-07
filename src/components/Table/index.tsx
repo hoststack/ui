@@ -12,16 +12,16 @@ import {
 } from "../../icons";
 import { Loading, Stack, Text, Button, Badge, Box, Icon, type ITable } from "../../index";
 import {
-  TableStitches,
-  TableCoreStitches,
-  TableRowStitches,
-  TableCellStitches,
-  TableHeaderCellStitches,
+  TableStyles,
+  TableCoreStyles,
+  TableRowStyles,
+  TableCellStyles,
+  TableHeaderCellStyles,
   AnimatedTableRow,
   TablePaginationBlock,
   TableCellBlock,
-  TableSubRowStitches,
-  TableSubCellStitches,
+  TableSubRowStyles,
+  TableSubCellStyles,
   TableMobileView,
   TableMobileRow,
   TableMobileLabel,
@@ -181,8 +181,8 @@ export default function Table({
       const hasSubRows = Boolean(row.subRows?.length);
       const isExpanded = expanded.has(row.id);
       const isFullWidth = Object.keys(row.cells).length === 1;
-      const RowComponent = isSubRow ? TableSubRowStitches : AnimatedTableRow;
-      const CellComponent = isSubRow ? TableSubCellStitches : TableCellStitches;
+      const RowComponent = isSubRow ? TableSubRowStyles : AnimatedTableRow;
+      const CellComponent = isSubRow ? TableSubCellStyles : TableCellStyles;
 
       return (
         <Fragment key={row.id}>
@@ -285,12 +285,12 @@ export default function Table({
   );
 
   return (
-    <TableStitches css={css}>
-      <TableCoreStitches ref={tableRef} aria-busy={loading || undefined}>
+    <TableStyles css={css}>
+      <TableCoreStyles ref={tableRef} aria-busy={loading || undefined}>
         <thead>
-          <TableRowStitches ref={tableHeaderRef}>
+          <TableRowStyles ref={tableHeaderRef}>
             {memoizedColumns.map((col) => (
-              <TableHeaderCellStitches
+              <TableHeaderCellStyles
                 key={col.key}
                 align={col.align}
                 css={{
@@ -331,9 +331,9 @@ export default function Table({
                     </Button>
                   )}
                 </div>
-              </TableHeaderCellStitches>
+              </TableHeaderCellStyles>
             ))}
-          </TableRowStitches>
+          </TableRowStyles>
         </thead>
         <tbody>
           {error ? (
@@ -358,7 +358,7 @@ export default function Table({
             </tr>
           )}
         </tbody>
-      </TableCoreStitches>
+      </TableCoreStyles>
 
       <TableMobileView>
         {error ? (
@@ -409,7 +409,7 @@ export default function Table({
           </Stack>
         </TablePaginationBlock>
       )}
-    </TableStitches>
+    </TableStyles>
   );
 }
 

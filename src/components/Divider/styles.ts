@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 export const DividerStyled = styled("hr", {
   backgroundColor: "transparent",

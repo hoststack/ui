@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import type { TBreakpoint, IUseBreakpoints } from "../types/hooks";
 
-import { breakpoints } from "../stitches.config";
+import { breakpoints } from "../stoop.config";
 
 const extractMediaQuery = (cssRule: string): string => {
   return cssRule.replace("@media only screen and ", "");

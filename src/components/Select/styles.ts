@@ -1,4 +1,4 @@
-import { fadeInUp, fadeOutDown, styled } from "../../stitches.config";
+import { fadeInUp, fadeOutDown, styled } from "../../stoop.config";
 
 const stickyBase = {
   backdropFilter: "blur(16px)",
@@ -77,7 +77,6 @@ export const SelectItemStyled = styled("div", {
   textAlign: "left",
   transition: "$default",
   userSelect: "none",
-
   variants: {
     focused: {
       true: {

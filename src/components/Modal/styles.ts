@@ -1,10 +1,4 @@
-import {
-  slideInRight,
-  slideInUp,
-  slideOutDown,
-  slideOutRight,
-  styled,
-} from "../../stitches.config";
+import { slideInRight, slideInUp, slideOutDown, slideOutRight, styled } from "../../stoop.config";
 
 export const ModalStyled = styled("div", {
   display: "inline-flex",

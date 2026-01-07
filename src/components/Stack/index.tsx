@@ -1,9 +1,7 @@
-import type { JSX } from "react";
+import { type JSX } from "react";
 
-import { CSS } from "@stitches/react";
+import type { CSS, IStack } from "../../index";
 
-import { type IStack } from "../../index";
-import { darkTheme } from "../../stitches.config";
 import { StackStyled } from "./styles";
 
 const getFlexValue = (width: number): string => (width === 100 ? `0 0 100%` : `${width} 1 0%`);
@@ -76,6 +74,7 @@ export default function Stack({
   wrap,
   ...rest
 }: IStack): JSX.Element {
+  const isDark = inverted;
   const effectiveMinimal = direction === "row" ? minimal !== false : minimal === true;
   const finalCSS: CSS = {
     ...(align && { textAlign: align }),
@@ -91,6 +90,10 @@ export default function Stack({
     ...(top && { marginTop: 0, paddingTop: `$${top}` }),
     ...(bottom && { marginBottom: 0, paddingBottom: `$${bottom}` }),
     ...(width !== undefined && { flex: getFlexValue(width) }),
+    ...(isDark && {
+      backgroundColor: "$background",
+      color: "$text",
+    }),
     ...css,
     ...(widthResponsive && createResponsiveWidth(widthResponsive, css)),
   };
@@ -98,7 +101,7 @@ export default function Stack({
   return (
     <StackStyled
       as={as}
-      className={inverted ? darkTheme.className : className}
+      className={className}
       css={finalCSS}
       direction={direction}
       id={id}

@@ -1,4 +1,4 @@
-import { useState, type JSX } from "react";
+import { useState, type JSX, type KeyboardEvent, type MouseEvent } from "react";
 import { toast } from "react-hot-toast";
 
 import { ClipboardIcon, CrossCircledIcon } from "../../icons";
@@ -67,7 +67,7 @@ export default function Badge({
       theme={theme}
       variant={variant}
       onClick={copy ? handleCopy : onClick}
-      onKeyDown={(e): void => {
+      onKeyDown={(e: KeyboardEvent<HTMLSpanElement>): void => {
         if (!isInteractive) return;
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -103,11 +103,11 @@ export default function Badge({
           hover
           role="button"
           tabIndex={0}
-          onClick={(e): void => {
+          onClick={(e: MouseEvent<HTMLSpanElement>): void => {
             e.stopPropagation();
             handleClose();
           }}
-          onKeyDown={(e): void => {
+          onKeyDown={(e: KeyboardEvent<HTMLSpanElement>): void => {
             e.stopPropagation();
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();

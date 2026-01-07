@@ -1,4 +1,4 @@
-import { fadeInUp, fadeOutDown, styled } from "../../stitches.config";
+import { fadeInUp, fadeOutDown, styled } from "../../stoop.config";
 
 export const PopoverStyled = styled("div", {
   display: "inline-flex",

@@ -1,7 +1,6 @@
-import type { JSX } from "react";
+import { type JSX } from "react";
 
 import { type IView } from "../../index";
-import { darkTheme } from "../../stitches.config";
 import { ViewStyled, ViewContainerStyled } from "./styles";
 
 export default function View({
@@ -15,10 +14,11 @@ export default function View({
   inverted,
   top,
 }: IView): JSX.Element {
+  const isDark = inverted;
+
   return (
     <ViewStyled
       as={as}
-      className={inverted ? darkTheme.className : ""}
       css={{
         ...(top && {
           marginTop: 0,
@@ -27,6 +27,10 @@ export default function View({
         ...(bottom && {
           marginBottom: 0,
           paddingBottom: `$${bottom}`,
+        }),
+        ...(isDark && {
+          backgroundColor: "$background",
+          color: "$text",
         }),
         ...css,
       }}

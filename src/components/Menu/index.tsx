@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type JSX } from "react";
+import { useEffect, useId, useState, type JSX, type MouseEvent as ReactMouseEvent } from "react";
 import { createPortal } from "react-dom";
 
 import { CrossCircledIcon } from "../../icons";
@@ -112,7 +112,7 @@ export default function Menu({
         aria-expanded={menu.isOpen}
         aria-haspopup="menu"
         css={triggerCSS}
-        onClick={(e): void => {
+        onClick={(e: ReactMouseEvent<HTMLDivElement>): void => {
           e.stopPropagation();
           handleClick();
         }}>

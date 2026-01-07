@@ -1,4 +1,4 @@
-import { styled, fadeOut, pulse } from "../../stitches.config";
+import { styled, fadeOut, pulse } from "../../stoop.config";
 
 export const BadgeStyled = styled("span", {
   alignContent: "center !important",
@@ -7,70 +7,16 @@ export const BadgeStyled = styled("span", {
   backgroundColor: "$surface",
   border: "1px solid $border",
   color: "$text",
-  compoundVariants: [
-    {
-      css: {
-        backgroundColor: "$surface",
-        borderColor: "$border",
-      },
-      theme: "default",
-      variant: "border",
-    },
-    {
-      css: {
-        backgroundColor: "$text",
-        borderColor: "$text",
-        color: "$background",
-      },
-      theme: "solid",
-      variant: "border",
-    },
-    {
-      css: {
-        backgroundColor: "$surface",
-        borderColor: "$yellow",
-        borderLeftWidth: "5px",
-      },
-      theme: "yellow",
-      variant: "border",
-    },
-    {
-      css: {
-        backgroundColor: "$surface",
-        borderColor: "$border",
-        color: "$text",
-      },
-      theme: "default",
-      variant: "theme",
-    },
-    {
-      css: {
-        backgroundColor: "$text",
-        borderColor: "$text",
-        color: "$background",
-      },
-      theme: "solid",
-      variant: "theme",
-    },
-    {
-      css: {
-        backgroundColor: "$yellow",
-        borderColor: "$yellow",
-        color: "$text",
-      },
-      theme: "yellow",
-      variant: "theme",
-    },
-  ],
   display: "inline-flex",
   fontFamily: "$default",
   fontSize: "$small",
   fontWeight: 600,
   justifyContent: "center",
-  lineHeight: "$default",
+  lineHeight: "$lineHeights.default",
   marginBottom: "0 !important",
   padding: "$smallest $small",
   position: "relative",
+
   variants: {
     animation: {
       true: {
@@ -127,13 +73,13 @@ export const BadgeStyled = styled("span", {
       theme: {},
     },
   },
-
   verticalAlign: "middle",
 });
 
 export const BadgeIconStyled = styled("span", {
   color: "inherit",
   display: "inline-flex",
+
   variants: {
     align: {
       left: {
@@ -159,7 +105,6 @@ export const BadgeIconStyled = styled("span", {
       },
     },
   },
-
   verticalAlign: "middle",
 });
 

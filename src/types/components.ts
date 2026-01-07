@@ -1,4 +1,3 @@
-import { type CSS } from "@stitches/react";
 import {
   ReactNode,
   ComponentPropsWithRef,
@@ -10,7 +9,7 @@ import {
 } from "react";
 
 import { TextSizes } from "../components/Text/styles";
-import { spacings } from "../stitches.config";
+import { type CSS, spacings } from "../stoop.config";
 
 /**
  * Avatar component props
@@ -201,6 +200,8 @@ export interface IModal {
   disabled?: boolean;
   /** Footer content displayed at the bottom of the modal (e.g., action buttons) */
   footer?: ReactNode;
+  /** Force a specific height for the modal content in pixels */
+  forceHeight?: number;
   /** Whether to render a smaller version of the modal */
   small?: boolean;
   /** Title text displayed in the modal header */
@@ -413,8 +414,10 @@ export interface IInput extends ComponentPropsWithRef<"input"> {
  * />
  * ```
  */
-export interface IPlaces
-  extends Omit<IInput, "submitFunction" | "submit" | "reveal" | "copy" | "reset"> {
+export interface IPlaces extends Omit<
+  IInput,
+  "submitFunction" | "submit" | "reveal" | "copy" | "reset"
+> {
   /** Google Maps API key for Places API */
   apiKey: string;
   /** Callback when a place is selected from the dropdown */

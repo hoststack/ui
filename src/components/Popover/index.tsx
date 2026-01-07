@@ -1,4 +1,4 @@
-import { useId, type JSX, type MouseEvent } from "react";
+import { useId, type JSX, type MouseEvent as ReactMouseEvent } from "react";
 
 import {
   useEventListener,
@@ -32,7 +32,7 @@ export default function Popover({
     }
   }
 
-  function handleTriggerClick(e: MouseEvent): void {
+  function handleTriggerClick(e: ReactMouseEvent<HTMLDivElement>): void {
     e.stopPropagation();
     if (!disabled) {
       handleClick();
@@ -50,7 +50,7 @@ export default function Popover({
         aria-expanded={isOpen}
         aria-haspopup="dialog"
         css={triggerCSS}
-        onClick={(e) => handleTriggerClick(e)}>
+        onClick={(e: ReactMouseEvent<HTMLDivElement>) => handleTriggerClick(e)}>
         {trigger}
       </PopoverTriggerStyled>
 

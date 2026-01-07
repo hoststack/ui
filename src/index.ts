@@ -1,9 +1,19 @@
-export { css, styled, globalCss, keyframes, theme, darkTheme, getCssText } from "./stitches.config";
+export {
+  css,
+  styled,
+  globalCss,
+  keyframes,
+  theme,
+  darkTheme,
+  getCssText,
+  Provider as StoopProvider,
+  useTheme as useStoopTheme,
+  type CSS,
+} from "./stoop.config";
 
 // Export all types
 export * from "./types/components";
 export * from "./types/hooks";
-export * from "./types/stitches";
 import { lazy } from "react";
 export * from "./icons";
 

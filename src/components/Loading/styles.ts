@@ -1,4 +1,4 @@
-import { keyframes, styled } from "../../stitches.config";
+import { keyframes, styled } from "../../stoop.config";
 
 const animationDuration = "8s";
 

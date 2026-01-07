@@ -1,6 +1,6 @@
 # @hoststack/ui
 
-> A React component library styled with Stitches, designed specifically for HostStack's internal projects and design system.
+> A React component library styled with Stoop, designed specifically for HostStack's internal projects and design system.
 
 [![npm version](https://img.shields.io/npm/v/@hoststack/ui.svg)](https://www.npmjs.com/package/@hoststack/ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -20,7 +20,7 @@ For general-purpose React component libraries, consider [Chakra UI](https://chak
 - 🏗️ **Built for React** - Compatible with React 19+
 - 🎯 **TypeScript First** - Full type safety with comprehensive TypeScript definitions
 - 📱 **Responsive** - Mobile-first design with flexible breakpoint system
-- 🎭 **Theming** - Light/dark mode support with Stitches CSS-in-JS
+- 🎭 **Theming** - Light/dark mode support with Stoop CSS-in-JS
 - ⚡ **Performance** - Tree-shakeable with minimal runtime overhead
 - 📖 **Well Documented** - Auto-generated API documentation from TypeScript interfaces
 
@@ -91,7 +91,7 @@ src/
 ├── components/          # React components
 ├── hooks/              # Custom React hooks
 ├── types.ts            # TypeScript interfaces (auto-documented)
-├── stitches.config.ts  # Design system configuration
+├── stoop.config.ts    # Design system configuration
 └── index.ts            # Main entry point
 
 docs/                   # Auto-generated API documentation
@@ -104,7 +104,7 @@ Detailed TypeScript interfaces, props, and examples are available in the [`docs/
 
 ## Theming
 
-The library uses Stitches for styling with a comprehensive design system:
+The library uses Stoop for styling with a comprehensive design system:
 
 ```tsx
 import { Provider } from '@hoststack/ui';
@@ -156,7 +156,7 @@ import { Provider } from '@hoststack/ui';
 
 This library is built on top of excellent open source projects:
 
-- **[@stitches/react](https://stitches.dev/)** - CSS-in-JS library with near-zero runtime
+- **[Stoop](https://github.com/cristianbote/stoop)** - CSS-in-JS library with near-zero runtime
 - **[@radix-ui/react-icons](https://www.radix-ui.com/icons)** - Clean, consistent icon family for interfaces
 - **[react-hot-toast](https://react-hot-toast.com/)** - Smoking hot React notifications
 - **[fast-sort](https://github.com/snovakovic/fast-sort)** - Blazing fast array sorting

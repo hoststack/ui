@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 const interactiveStyles = {
   borderColor: "$text",
@@ -6,6 +6,7 @@ const interactiveStyles = {
 
 export const InputStyled = styled("div", {
   position: "relative",
+
   variants: {
     disabled: {
       true: {
@@ -14,7 +15,6 @@ export const InputStyled = styled("div", {
       },
     },
   },
-
   width: "100%",
 });
 
@@ -48,7 +48,7 @@ export const InputAreaStyled = styled("input", {
   color: "$text",
   display: "block",
   flex: "1 1 auto",
-  fontFamily: "$default",
+  fontFamily: "$fonts.default",
   fontSize: "$default",
   height: "$large",
   minWidth: 0,

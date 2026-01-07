@@ -1,4 +1,4 @@
-import { styled } from "../../stitches.config";
+import { styled } from "../../stoop.config";
 
 const interactiveStyles = {
   borderColor: "$text",
@@ -6,6 +6,7 @@ const interactiveStyles = {
 
 export const FieldStyled = styled("div", {
   position: "relative",
+
   variants: {
     disabled: {
       true: {
@@ -14,7 +15,6 @@ export const FieldStyled = styled("div", {
       },
     },
   },
-
   width: "100%",
 });
 
@@ -48,7 +48,7 @@ export const FieldAreaStyled = styled("textarea", {
   border: "none",
   color: "$text",
   display: "block",
-  fontFamily: "$default",
+  fontFamily: "$fonts.default",
   fontSize: "$default",
   minHeight: "$largest",
   padding: "$small",

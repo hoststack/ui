@@ -1,6 +1,14 @@
 import { JSX, useState } from "react";
 
-import { ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, CheckCircledIcon, InfoCircledIcon, ExitIcon, CrossCircledIcon } from "../../src/icons";
+import {
+  ArrowRightIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
+  CheckCircledIcon,
+  InfoCircledIcon,
+  ExitIcon,
+  CrossCircledIcon,
+} from "../../src/icons";
 import * as C from "../../src/index";
 
 export default function SelectDemo(): JSX.Element {
@@ -14,43 +22,42 @@ export default function SelectDemo(): JSX.Element {
       icon: <C.Icon radix={<ArrowRightIcon />} />,
       iconPosition: "left" as const,
       label: "Option 1",
-      value: "option1"
+      value: "option1",
     },
     {
       icon: <C.Icon radix={<ArrowDownIcon />} />,
       iconPosition: "left" as const,
       label: "Option 2",
-      value: "option2"
+      value: "option2",
     },
     {
       icon: <C.Icon radix={<ArrowUpIcon />} />,
       iconPosition: "left" as const,
       label: "Option 3",
-      value: "option3"
+      value: "option3",
     },
     {
-                    icon: <C.Icon radix={<CheckCircledIcon />} />,
+      icon: <C.Icon radix={<CheckCircledIcon />} />,
       iconPosition: "left" as const,
       label: "Option 4",
-      value: "option4"
-    }
+      value: "option4",
+    },
   ];
 
   const manyOptions = Array.from({ length: 10 }, (_, i) => ({
     label: `Option ${i + 1}`,
-    value: `option${i + 1}`
+    value: `option${i + 1}`,
   }));
 
   return (
-    <C.Stack css={{ 
-      display: "grid",
-      gap: "$large",
-      gridTemplateColumns: "repeat(3, 1fr)" 
-    }}>
+    <C.Stack
+      css={{
+        display: "grid",
+        gap: "$large",
+        gridTemplateColumns: "repeat(3, 1fr)",
+      }}>
       {/* Controlled Demo */}
-      <C.Box css={{ gridColumn: "1 / -1" }} header={
-        <C.Text as="h4">Controlled Value</C.Text>
-      }>
+      <C.Box css={{ gridColumn: "1 / -1" }} header={<C.Text as="h4">Controlled Value</C.Text>}>
         <C.Stack css={{ gap: "$medium" }}>
           <C.Stack css={{ gap: "$small" }} direction="row">
             <C.Button small onClick={() => setControlledValue("option1")}>
@@ -70,7 +77,9 @@ export default function SelectDemo(): JSX.Element {
             trigger={
               <C.Button>
                 <C.Icon radix={<ArrowDownIcon />} />
-                {controlledValue ? options.find(o => o.value === controlledValue)?.label : "Select"}
+                {controlledValue
+                  ? options.find((o) => o.value === controlledValue)?.label
+                  : "Select"}
               </C.Button>
             }
             onSelection={(value) => setControlledValue(value)}
@@ -80,16 +89,14 @@ export default function SelectDemo(): JSX.Element {
       </C.Box>
 
       {/* Basic Select */}
-      <C.Box header={
-        <C.Text as="h4">Basic Select</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Basic Select</C.Text>}>
         <C.Select
           label="Choose an option"
           options={options.slice(0, 3)}
           trigger={
             <C.Button>
               <C.Icon radix={<ArrowDownIcon />} />
-              {singleValue ? options.find(o => o.value === singleValue)?.label : "Select"}
+              {singleValue ? options.find((o) => o.value === singleValue)?.label : "Select"}
             </C.Button>
           }
           onSelection={(value) => setSingleValue(value)}
@@ -98,9 +105,7 @@ export default function SelectDemo(): JSX.Element {
       </C.Box>
 
       {/* With Filter */}
-      <C.Box header={
-        <C.Text as="h4">With Filter</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">With Filter</C.Text>}>
         <C.Select
           filter
           label="Search options"
@@ -117,9 +122,7 @@ export default function SelectDemo(): JSX.Element {
       </C.Box>
 
       {/* Multi Select */}
-      <C.Box header={
-        <C.Text as="h4">Multi Select</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Multi Select</C.Text>}>
         <C.SelectMulti
           label="Multiple selection"
           options={options}
@@ -132,14 +135,12 @@ export default function SelectDemo(): JSX.Element {
           onSelection={(values) => setMultiValue(values)}
         />
         <C.Text accent>
-          {multiValue.length ? multiValue.map(v => v.label).join(", ") : "None selected"}
+          {multiValue.length ? multiValue.map((v) => v.label).join(", ") : "None selected"}
         </C.Text>
       </C.Box>
 
       {/* Disabled Select */}
-      <C.Box header={
-        <C.Text as="h4">Disabled State</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Disabled State</C.Text>}>
         <C.Select
           disabled
           label="Cannot select"
@@ -155,9 +156,7 @@ export default function SelectDemo(): JSX.Element {
       </C.Box>
 
       {/* With Limit */}
-      <C.Box header={
-        <C.Text as="h4">Limited Multi</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">Limited Multi</C.Text>}>
         <C.SelectMulti
           label="Max 2 selections"
           limit={2}
@@ -170,15 +169,11 @@ export default function SelectDemo(): JSX.Element {
           }
           onSelection={(values) => setMultiValue(values)}
         />
-        <C.Text accent>
-          {multiValue.length}/2 selected
-        </C.Text>
+        <C.Text accent>{multiValue.length}/2 selected</C.Text>
       </C.Box>
 
       {/* No Reset Multi */}
-      <C.Box header={
-        <C.Text as="h4">No Reset</C.Text>
-      }>
+      <C.Box header={<C.Text as="h4">No Reset</C.Text>}>
         <C.SelectMulti
           label="No reset button"
           options={options.slice(0, 3)}
@@ -195,4 +190,4 @@ export default function SelectDemo(): JSX.Element {
       </C.Box>
     </C.Stack>
   );
-} 
+}

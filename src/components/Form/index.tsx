@@ -1,4 +1,10 @@
-import { useRef, useState, type JSX, type FormEvent } from "react";
+import {
+  useRef,
+  useState,
+  type JSX,
+  type FormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 
 import { Button, useEventListener, type IForm } from "../../index";
 import { FormStyled } from "./styles";
@@ -59,7 +65,7 @@ export default function Form({
     handleSubmit(formEl);
   }
 
-  useEventListener("keydown", (event: KeyboardEvent) => {
+  useEventListener("keydown", (event: globalThis.KeyboardEvent) => {
     if (listen && event.key === "Enter" && submit && formRef.current && isValidNow()) {
       event.preventDefault();
       handleSubmit(formRef.current);
@@ -76,14 +82,14 @@ export default function Form({
       id={id || name}
       name={name}
       onChange={() => setIsSubmitted(false)}
-      onKeyDown={(e): void => {
-        const { key } = e as unknown as KeyboardEvent;
+      onKeyDown={(e: ReactKeyboardEvent<HTMLFormElement>) => {
+        const { key } = e;
 
         if (!listen && key === "Enter") {
           e.preventDefault();
         }
       }}
-      onSubmit={(e): void => onSubmit(e)}
+      onSubmit={(event: FormEvent<HTMLFormElement>) => onSubmit(event)}
       {...rest}>
       {children}
 

@@ -9,7 +9,8 @@ export default function PlacesDemo() {
   const [selectedPlace, setSelectedPlace] = useState<string>("");
   const [selectedPlaceDetails, setSelectedPlaceDetails] = useState<any>(null);
 
-  const apiKey = (typeof process !== "undefined" && process.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) || "";
+  const apiKey =
+    (typeof process !== "undefined" && process.env?.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) || "";
 
   if (!apiKey) {
     return (
@@ -18,7 +19,9 @@ export default function PlacesDemo() {
         <Text>
           To use this demo, please set the NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable.
         </Text>
-        <Text accent>For demo purposes, the API key would be loaded from environment variables.</Text>
+        <Text accent>
+          For demo purposes, the API key would be loaded from environment variables.
+        </Text>
       </View>
     );
   }
@@ -26,7 +29,7 @@ export default function PlacesDemo() {
   return (
     <View>
       <Text as="h2">Places Demo</Text>
-      
+
       <Stack css={{ maxWidth: "600px" }} gap="large">
         <div>
           <Text as="h3">Basic Places Search (Controlled)</Text>
@@ -102,17 +105,16 @@ export default function PlacesDemo() {
           />
         </div>
 
-        
-
         {selectedPlaceDetails && (
           <div>
             <Text as="h3">Selected Place Details</Text>
-            <pre style={{ 
-              backgroundColor: "var(--colors-surface)", 
-              fontSize: "var(--fontSizes-small)",
-              overflow: "auto",
-              padding: "var(--space-medium)"
-            }}>
+            <pre
+              style={{
+                backgroundColor: "var(--colors-surface)",
+                fontSize: "var(--fontSizes-small)",
+                overflow: "auto",
+                padding: "var(--space-medium)",
+              }}>
               {JSON.stringify(selectedPlaceDetails, null, 2)}
             </pre>
           </div>
@@ -120,4 +122,4 @@ export default function PlacesDemo() {
       </Stack>
     </View>
   );
-} 
+}

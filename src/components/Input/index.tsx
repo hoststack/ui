@@ -134,7 +134,7 @@ const Input = forwardRef<HTMLInputElement, IInput>(
             placeholder={placeholder}
             type={isRevealed ? "text" : type || "text"}
             value={inputValue}
-            onChange={(event) => handleChange(event)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event)}
             {...rest}
           />
 
