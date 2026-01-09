@@ -105,7 +105,7 @@ export const BoxStyled = styled("div", {
         color: "$background",
       },
       yellow: {
-        background: "$yellowLight",
+        backgroundColor: "$yellowLight",
       },
     },
   },

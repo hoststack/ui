@@ -1,5 +1,5 @@
 /// <reference types="google.maps" />
-import { Loader } from "@googlemaps/js-api-loader";
+import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
 import { useEffect, useRef, useState, type JSX } from "react";
 
 import { Loading, type IMaps } from "../../index";
@@ -10,6 +10,8 @@ declare global {
     google?: typeof google;
   }
 }
+
+let optionsSet = false;
 
 export default function Maps({
   apiKey,
@@ -51,15 +53,15 @@ export default function Maps({
       }
 
       if (typeof center === "string") {
-        const loader = new Loader({
-          apiKey,
-          libraries: ["places", "maps", "geocoding"],
-          version: "weekly",
-        });
+        if (!optionsSet) {
+          setOptions({
+            key: apiKey,
+            version: "weekly",
+          } as Parameters<typeof setOptions>[0]);
+          optionsSet = true;
+        }
 
-        await (loader as { importLibrary: (lib: string) => Promise<unknown> }).importLibrary(
-          "geocoding",
-        );
+        await importLibrary("geocoding");
 
         if (!isActive) return;
 
@@ -105,13 +107,15 @@ export default function Maps({
 
     let isActive = true;
     const initMap = async (): Promise<void> => {
-      const loader = new Loader({
-        apiKey,
-        libraries: ["places", "maps", "geocoding"],
-        version: "weekly",
-      });
+      if (!optionsSet) {
+        setOptions({
+          key: apiKey,
+          version: "weekly",
+        } as Parameters<typeof setOptions>[0]);
+        optionsSet = true;
+      }
 
-      await (loader as { importLibrary: (lib: string) => Promise<unknown> }).importLibrary("maps");
+      await importLibrary("maps");
 
       if (!isActive) return;
 

@@ -150,11 +150,11 @@ const globalCssConfig = {
     textRendering: "optimizeLegibility",
     WebkitFontSmoothing: "antialiased",
   },
+  "button:disabled, input:disabled, textarea:disabled, select:disabled": {
+    cursor: "not-allowed",
+    opacity: "$light",
+  },
   "button, input, textarea, select": {
-    "&:disabled": {
-      cursor: "not-allowed",
-      opacity: "$light",
-    },
     cursor: "pointer",
     fontFamily: "inherit",
     fontSize: "inherit",
@@ -493,6 +493,7 @@ export const {
   getCssText,
   globalCss,
   keyframes,
+  preloadTheme,
   styled,
   theme,
   createTheme,

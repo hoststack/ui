@@ -6,6 +6,7 @@ export {
   theme,
   darkTheme,
   getCssText,
+  preloadTheme,
   Provider as StoopProvider,
   useTheme as useStoopTheme,
   type CSS,

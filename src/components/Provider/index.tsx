@@ -7,7 +7,7 @@ import { ToastController } from "./ToastController";
 // Note: globalCss is automatically applied by StoopProvider when globalCss is passed to createStoop
 // No need to manually call it here - it's handled in stoop.config.ts
 
-export default function Provider({ children, css, dark }: IProvider): JSX.Element {
+export default function Provider({ children, css, dark = false }: IProvider): JSX.Element {
   const themeName = dark ? "dark" : "light";
 
   if (!StoopProvider) {
@@ -17,7 +17,7 @@ export default function Provider({ children, css, dark }: IProvider): JSX.Elemen
   }
 
   return (
-    <StoopProvider attribute="data-theme" defaultTheme={themeName} storageKey="airindex-ui-theme">
+    <StoopProvider attribute="data-theme" defaultTheme={themeName} storageKey="hoststack-ui-theme">
       <ProviderStyled css={css}>
         <ToastController />
         {children}
