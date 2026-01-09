@@ -30,8 +30,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(react@19.2.3)
       stoop:
-        specifier: ^0.5.3
-        version: 0.5.3(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^0.5.4
+        version: 0.5.4(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@types/google.maps':
         specifier: ^3.58.1
@@ -597,8 +597,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  baseline-browser-mapping@2.9.13:
-    resolution: {integrity: sha512-WhtvB2NG2wjr04+h77sg3klAIwrgOqnjS49GGudnUPGFFgg7G17y7Qecqp+2Dr5kUDxNRBca0SK7cG8JwzkWDQ==}
+  baseline-browser-mapping@2.9.14:
+    resolution: {integrity: sha512-B0xUquLkiGLgHhpPBqvl7GWegWBUNuujQ6kXd/r1U38ElPT6Ok8KZ8e+FpUGEc2ZoRQUzq/aUnaKFc/svWUGSg==}
     hasBin: true
 
   brace-expansion@1.1.12:
@@ -1453,8 +1453,8 @@ packages:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
 
-  stoop@0.5.3:
-    resolution: {integrity: sha512-TY9iKgUrQTN9JfhtnkicOPBhKqYG5MtE7n/eagDVjQYjJOQGi4oqfdd91FBe4I0XhM9Y7WekovD25cp9/FVQkA==}
+  stoop@0.5.4:
+    resolution: {integrity: sha512-QPO1lZs8zXEdpZe7DsRQFzWrWMSl2E/e4n38zU7Yx2sKC7eo7BRFA3YoCZSbsXjBWWIMDE948A9y7zolekFFLw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2155,7 +2155,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  baseline-browser-mapping@2.9.13: {}
+  baseline-browser-mapping@2.9.14: {}
 
   brace-expansion@1.1.12:
     dependencies:
@@ -2172,7 +2172,7 @@ snapshots:
 
   browserslist@4.28.1:
     dependencies:
-      baseline-browser-mapping: 2.9.13
+      baseline-browser-mapping: 2.9.14
       caniuse-lite: 1.0.30001763
       electron-to-chromium: 1.5.267
       node-releases: 2.0.27
@@ -3194,7 +3194,7 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  stoop@0.5.3(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  stoop@0.5.4(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
