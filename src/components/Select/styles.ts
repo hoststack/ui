@@ -1,8 +1,7 @@
 import { fadeInUp, fadeOutDown, styled } from "../../stoop.config";
 
 const stickyBase = {
-  backdropFilter: "blur(16px)",
-  backgroundColor: "transparent",
+  backgroundColor: "$surfaceLight",
   position: "sticky",
   top: 0,
   zIndex: "$select",
@@ -25,8 +24,7 @@ export const SelectGroupStyled = styled("div", {
   "&::-webkit-scrollbar": {
     display: "none",
   },
-  backdropFilter: "blur(8px)",
-  backgroundColor: "$glass",
+  backgroundColor: "$surface",
   border: "1px solid $border",
   lineBreak: "auto",
   overflowY: "auto",

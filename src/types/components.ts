@@ -485,14 +485,11 @@ export interface IMaps {
  *
  * @example
  * ```tsx
- * <Loading theme="colored" stroke="blue" />
+ * <Loading />
  * ```
  */
 export interface ILoading {
-  /** Custom CSS styles */
-  css?: CSS;
-  /** Width of the loading component */
-  width?: number | string;
+  // No props - Loading component is fixed and cannot be customized
 }
 
 /**

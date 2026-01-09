@@ -3,7 +3,6 @@ import { styled, fadeOut, pulse } from "../../stoop.config";
 export const BadgeStyled = styled("span", {
   alignContent: "center !important",
   alignItems: "center !important",
-  backdropFilter: "blur(4px)",
   backgroundColor: "$surface",
   border: "1px solid $border",
   color: "$text",

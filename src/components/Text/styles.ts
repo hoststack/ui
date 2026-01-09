@@ -12,6 +12,7 @@ const link = {
   color: "$text",
   cursor: "pointer",
   margin: 0,
+  textDecoration: "none !important",
   transition: "$default",
 };
 
@@ -22,6 +23,7 @@ const mutedStyles = {
 export const TextSizes = {
   a: {
     marginBottom: 0,
+    textDecoration: "none !important",
   },
   h1: {
     fontFamily: "$heading",
@@ -135,8 +137,8 @@ export const TextStyled = styled("div", {
     marginBottom: "0 !important",
   },
   color: "$text",
-  marginBlock: "auto",
-  paddingBlock: "auto",
+  marginBlock: "0",
+  paddingBlock: "0",
   variants: {
     accent: {
       true: mutedStyles,
@@ -167,6 +169,7 @@ export const TextStyled = styled("div", {
         alignSelf: "center",
         display: "inline-flex !important",
         marginBottom: "0 !important",
+        marginTop: "0 !important",
         verticalAlign: "middle",
       },
     },
@@ -175,8 +178,15 @@ export const TextStyled = styled("div", {
         ...link,
       },
       minimal: {
-        ...link,
-        borderColor: "transparent",
+        "&:hover": {
+          backgroundColor: "$surface",
+        },
+        borderBottom: "none !important",
+        color: "$text",
+        cursor: "pointer",
+        margin: 0,
+        textDecoration: "none !important",
+        transition: "$default",
       },
     },
     muted: {

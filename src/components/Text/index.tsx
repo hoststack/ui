@@ -46,14 +46,16 @@ export default function Text({
           paddingBottom: `$${bottom}`,
         }),
         ...(inline && {
+          marginBottom: "0 !important",
           marginRight: inline === "auto" ? "auto" : `$${inline}`,
+          marginTop: "0 !important",
         }),
         ...css,
       }}
       hero={hero}
       highlight={highlight}
       href={isAnchor ? href : undefined}
-      inline={shouldShowInline ? true : false}
+      {...(shouldShowInline && { inline: true })}
       link={link || (isAnchor ? "default" : undefined)}
       muted={muted}
       rel={isAnchor ? (isExternalLink ? rel || "noopener noreferrer" : rel) : undefined}

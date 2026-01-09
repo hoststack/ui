@@ -11,62 +11,50 @@ const houseToSquareSlide = keyframes({
     clipPath: "polygon(10% 50%, 50% 15%, 90% 50%, 90% 100%, 10% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "15%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "20%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(-100%, -100%)",
   },
-
   "30%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(0%, -100%)",
   },
-
   "35%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "40%": {
     clipPath: "polygon(10% 50%, 50% 15%, 90% 50%, 90% 100%, 10% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "50%": {
     clipPath: "polygon(10% 50%, 50% 15%, 90% 50%, 90% 100%, 10% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "55%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "60%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(0%, 0%)",
   },
-
   "70%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(-100%, 0%)",
   },
-
   "75%": {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "80%": {
     clipPath: "polygon(10% 50%, 50% 15%, 90% 50%, 90% 100%, 10% 100%)",
     transform: "translate(-50%, -50%)",
   },
-
   "100%": {
     clipPath: "polygon(10% 50%, 50% 15%, 90% 50%, 90% 100%, 10% 100%)",
     transform: "translate(-50%, -50%)",
@@ -74,10 +62,8 @@ const houseToSquareSlide = keyframes({
 });
 
 export const LoadingStyled = styled("div", {
-  "&::before": {
+  "& svg": {
     animation: `${houseToSquareSlide} ${animationDuration} cubic-bezier(0.45, 0, 0.55, 1) infinite`,
-    backgroundColor: "currentColor",
-    content: "",
     height: "50%",
     left: "50%",
     position: "absolute",
@@ -89,7 +75,6 @@ export const LoadingStyled = styled("div", {
   display: "inline-flex",
   height: "$medium",
   position: "relative",
-
   width: "$medium",
 });
 

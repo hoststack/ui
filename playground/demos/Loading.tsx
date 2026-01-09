@@ -10,7 +10,7 @@ export default function LoadingDemo(): JSX.Element {
       css={{
         display: "grid",
         gap: "$large",
-        gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateColumns: "repeat(2, 1fr)",
       }}>
       {/* Basic Usage */}
       <C.Box header={<C.Text as="h4">Basic Usage</C.Text>}>
@@ -20,31 +20,12 @@ export default function LoadingDemo(): JSX.Element {
         </C.Stack>
       </C.Box>
 
-      {/* Themes */}
-      <C.Box header={<C.Text as="h4">Themes</C.Text>}>
-        <C.Stack>
+      {/* Multiple Instances */}
+      <C.Box header={<C.Text as="h4">Multiple Instances</C.Text>}>
+        <C.Stack direction="row" gap="small">
           <C.Loading />
-          <C.Text as="small">Default theme</C.Text>
-        </C.Stack>
-      </C.Box>
-
-      {/* Sizes */}
-      <C.Box header={<C.Text as="h4">Sizes</C.Text>}>
-        <C.Stack direction="row">
-          <C.Loading css={{ height: "16px", width: "16px" }} />
-          <C.Loading css={{ height: "24px", width: "24px" }} />
-          <C.Loading css={{ height: "32px", width: "32px" }} />
-          <C.Loading css={{ height: "48px", width: "48px" }} />
-        </C.Stack>
-      </C.Box>
-
-      {/* Custom Colors */}
-      <C.Box header={<C.Text as="h4">Custom Colors</C.Text>}>
-        <C.Stack direction="row">
-          <C.Loading css={{ color: "$text" }} />
-          <C.Loading css={{ color: "$border" }} />
-          <C.Loading css={{ color: "$borderLight" }} />
-          <C.Loading css={{ color: "$yellow" }} />
+          <C.Loading />
+          <C.Loading />
         </C.Stack>
       </C.Box>
 
@@ -58,20 +39,6 @@ export default function LoadingDemo(): JSX.Element {
           </C.Button>
           <C.Text>Content behind overlay</C.Text>
           {showOverlay && <C.LoadingOverlay title="Loading..." />}
-        </C.Stack>
-      </C.Box>
-
-      {/* Combinations */}
-      <C.Box header={<C.Text as="h4">Combinations</C.Text>}>
-        <C.Stack direction="row">
-          <C.Loading css={{ height: "32px", width: "32px" }} />
-          <C.Loading
-            css={{
-              color: "$yellow",
-              height: "24px",
-              width: "24px",
-            }}
-          />
         </C.Stack>
       </C.Box>
     </C.Stack>

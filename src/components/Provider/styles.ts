@@ -8,7 +8,8 @@ export const ToastStyled = styled("div", {
   "&:hover": {
     opacity: "$default",
   },
-  backdropFilter: "blur(8px)",
+  backgroundColor: "$surface",
+  border: "1px solid $border",
   cursor: "pointer",
   marginBottom: "$small",
   maxWidth: "600px",

@@ -41,7 +41,7 @@ export const ModalOverlayStyled = styled("div", {
 });
 
 export const ModalGroupStyled = styled("div", {
-  backgroundColor: "$glass",
+  backgroundColor: "$surface",
   borderLeft: "1px solid $border",
   display: "flex",
   // Desktop: sidebar behavior - full height, positioned from right
@@ -114,12 +114,8 @@ export const ModalGroupStyled = styled("div", {
 
 export const ModalHeaderStyled = styled("div", {
   alignItems: "center",
-  backdropFilter: "blur(16px)",
-  backgroundColor: "rgba(255, 255, 255, 0.1)",
+  backgroundColor: "$surfaceLight",
   borderBottom: "1px solid $borderLight",
-  darkOnly: {
-    backgroundColor: "rgba(0, 0, 0, 0.1)",
-  },
   display: "flex",
   flexShrink: 0,
   justifyContent: "space-between",
