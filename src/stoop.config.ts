@@ -550,19 +550,19 @@ export const slideOutScale = keyframes({
 // Bottom slide animations (for mobile modal)
 export const slideInUp = keyframes({
   from: {
-    transform: "translateY(100%)",
+    transform: "translateX(0) translateY(100%)",
   },
   to: {
-    transform: "translateY(0)",
+    transform: "translateX(0) translateY(0)",
   },
 });
 
 export const slideOutDown = keyframes({
   from: {
-    transform: "translateY(0)",
+    transform: "translateX(0) translateY(0)",
   },
   to: {
-    transform: "translateY(100%)",
+    transform: "translateX(0) translateY(100%)",
   },
 });
 

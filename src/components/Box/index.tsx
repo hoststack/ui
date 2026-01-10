@@ -71,14 +71,13 @@ export default function Box({
       }}
       footer={!!footer}
       hover={!loading && isHoverEnabled}
-      href={cta}
+      {...(cta && { href: cta, target: "_blank" as const })}
       id={id}
       loading={!!loading}
       padding={padding}
       rel={cta ? "noopener noreferrer" : undefined}
       role={role}
       tabIndex={tabIndex}
-      target={cta ? "_blank" : undefined}
       theme={theme || "default"}
       onClick={onClick}>
       {loading && (

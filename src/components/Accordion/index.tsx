@@ -72,6 +72,7 @@ export default function Accordion({
 
         return (
           <AccordionItemStyled key={option.value}>
+            {/* @ts-expect-error - Stoop styled component type inference issue with children prop */}
             <AccordionButtonStyled
               aria-controls={panelId}
               aria-expanded={isOpen}

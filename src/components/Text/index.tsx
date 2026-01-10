@@ -26,7 +26,6 @@ export default function Text({
   ...rest
 }: IText): JSX.Element {
   const TextBalancer = balanced ? Balancer : Fragment;
-  const elementType = as || "p";
   const styleSize = override || as || "p";
   const isAnchor = as === "a";
   const isExternalLink = isAnchor && target === "_blank";
@@ -35,7 +34,8 @@ export default function Text({
   return (
     <TextStyled
       accent={accent}
-      as={elementType}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      as={as as any}
       css={{
         ...(top && {
           marginTop: 0,
@@ -54,14 +54,14 @@ export default function Text({
       }}
       hero={hero}
       highlight={highlight}
-      href={isAnchor ? href : undefined}
+      {...(isAnchor && href ? { href } : {})}
       {...(shouldShowInline && { inline: true })}
       link={link || (isAnchor ? "default" : undefined)}
       muted={muted}
-      rel={isAnchor ? (isExternalLink ? rel || "noopener noreferrer" : rel) : undefined}
+      {...(isAnchor ? { rel: isExternalLink ? rel || "noopener noreferrer" : rel } : {})}
       size={styleSize}
-      target={isAnchor ? target : undefined}
-      truncate={truncate}
+      {...(isAnchor && target ? { target } : {})}
+      truncate={truncate ? (String(truncate) as "1" | "2" | "3" | "4") : undefined}
       {...rest}>
       <TextBalancer>{children}</TextBalancer>
       {isExternalLink && (
